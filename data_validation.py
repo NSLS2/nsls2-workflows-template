@@ -10,7 +10,7 @@ BEAMLINE_OR_ENDSTATION = "!!! Set the endstation or beamline_TLA here !!!"
 @task(retries=2, retry_delay_seconds=10)
 def read_all_streams(uid, beamline_acronym=BEAMLINE_OR_ENDSTATION):
     tiled_client = from_profile("nsls2")
-    run = tiled_client[beamline_acronym]["raw"][uid]
+    run = tiled_client[beamline_acronym.lower()]["raw"][uid]
     print(f"Validating uid {run.metadata['start']['uid']}")
     start_time = ttime.monotonic()
     for stream in run:
