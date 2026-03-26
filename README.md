@@ -12,3 +12,6 @@ endstation of the {TLA} beamline."
 
 For beamlines without endstations: "Repository of workflows for the {TLA}
 beamline."
+
+To configure running a workflow for CI, update test_run.py with the UID of a test workflow run,
+and set the Github repo secret TEST_TILED_API_KEY to the Tiled API key used for these tests.
